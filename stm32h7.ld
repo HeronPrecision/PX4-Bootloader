@@ -25,19 +25,20 @@
  ***********************************************************************/
 
 /**
- * @file stm32f7.ld
+ * @file stm32h7.ld
  *
- * Linker script for ST STM32F7 bootloader (use first 32K of flash, and 128K RAM).
+ * Linker script for ST STM32H7 bootloader (use first 32K of flash, and 128K RAM).
  *
  * @author Uwe Hermann <uwe@hermann-uwe.de>
  * @author Stephen Caudle <scaudle@doceme.com>
+ * @author Noah Bliss (pretended to help) <noah@superuser.sh>
  */
 
 /* Define memory regions. */
 MEMORY
 {
 	rom (rx)  : ORIGIN = 0x08000000, LENGTH = 32K
-	ram (rwx) : ORIGIN = 0x20000000, LENGTH = 128K
+	ram (rwx) : ORIGIN = 0x24000000, LENGTH = 128K
 }
 
 /* Enforce emmission of the vector table. */
@@ -108,4 +109,4 @@ SECTIONS
 	end = .;
 }
 
-PROVIDE(_stack = 0x20020000);
+PROVIDE(_stack = 0x24020000);
