@@ -91,7 +91,8 @@ TARGETS	= \
 	uvify_core_bl \
 	atl_mantis_edu_bl \
 	thepeach_k1_bl \
-	thepeach_r1_bl
+	thepeach_r1_bl \
+	heronprecision_fc1a1_bl
 
 all:	$(TARGETS) sizes
 
@@ -190,6 +191,9 @@ thepeach_k1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 
 thepeach_r1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
 	${MAKE} ${MKFLAGS} -f  Makefile.f4 TARGET_HW=THE_PEACH_R1 LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
+
+heronprecision_fc1a1_bl: $(MAKEFILE_LIST) $(LIBOPENCM3)
+	${MAKE} ${MKFLAGS} -f  Makefile.h7 TARGET_HW=HERONPRECISION_FC1A1 LINKER_FILE=stm32h7.ld TARGET_FILE_NAME=$@
 	
 # Default bootloader delay is *very* short, just long enough to catch
 # the board for recovery but not so long as to make restarting after a
