@@ -109,4 +109,4 @@ SECTIONS
 	end = .;
 }
 
-PROVIDE(_stack = 0x24020000);
+PROVIDE(_stack = ORIGIN(ram) + LENGTH(ram));
